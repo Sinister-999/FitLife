@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import User from "../models/Users";
+import User from "../models/Users.js";
 
 export const registerUser = async (req, res) => {
     const user = req.body;
@@ -21,8 +21,9 @@ export const registerUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(user.password, salt);
 
-    // Set Start Date
+    // Set Dates
     user.startDate = new Date();
+    user.day = 1;
 
     // Create User
     const newUser = new User(user);

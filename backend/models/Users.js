@@ -18,6 +18,9 @@ const userSchema = new mongoose.Schema({
     startDate: {
         type: Date,
         default: Date.now
+    },
+    day: {
+        type: Number
     }
 }, {
         timestamps: true
