@@ -1,10 +1,18 @@
-import { Button } from "@chakra-ui/react";
+import {Box} from "@chakra-ui/react";
+import {Route, Routes} from "react-router-dom";
+import HomePage from "./pages/HomePage.jsx";
+import Navbar from "./components/Navbar.jsx";
+import RegisterPage from "./pages/RegisterPage.jsx";
 
 function App() {
     return (
-        <div style={{ padding: "2rem" }}>
-            <Button colorScheme="blue">Click Me</Button>
-        </div>
+        <Box minH="100vh">
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/register" element={<RegisterPage />} />
+            </Routes>
+        </Box>
     );
 }
 
