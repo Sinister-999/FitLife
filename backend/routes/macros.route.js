@@ -3,8 +3,8 @@ import {createMacro, deleteMacro, updateMacro} from "../controllers/macros.contr
 
 const router = express.Router();
 
-router.post(createMacro);
-router.patch(updateMacro);
-router.delete(deleteMacro);
+router.post("/macros", createMacro);
+router.patch("/macros/:id", updateMacro);
+router.delete("/macros/:id", deleteMacro);
 
 export default router;

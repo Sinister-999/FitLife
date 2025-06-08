@@ -25,7 +25,7 @@ export const updateMacro = async (req, res) => {
     const macro = req.body;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(400).json({success: false, message: 'Invalid Macro ID'});
+        return res.status(404).json({success: false, message: 'Invalid Macro ID'});
     }
 
     try {
@@ -40,7 +40,7 @@ export const deleteMacro = async (req, res) => {
     const {id} = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(400).json({success: false, message: 'Invalid Macro ID'});
+        return res.status(404).json({success: false, message: 'Invalid Macro ID'});
     }
 
     try {
