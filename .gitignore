@@ -1,4 +1,6 @@
-/node_modules/
 /.idea/
-/.env
-/frontend/node_modules/
+venv/
+__pycache__/
+*.pyc
+.env
+db.sqlite3
